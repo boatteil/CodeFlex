@@ -1,6 +1,7 @@
 <h1 align="center">💪 AI Fitness Assistant 🤖</h1>
 
 ![image](https://github.com/boatteil/CodeFlex/blob/main/public/screenshot-for-readme.png)
+
 ## Highlights:
 
 - 🚀 Tech stack: Next.js, React, Tailwind & Shadcn UI
@@ -71,6 +72,8 @@ npm run start
 ```
 
 Or connect your GitHub repository to Vercel for automatic deployments.
+
+Update Next.js for Vercel
 
 ## Technologies Used
 
