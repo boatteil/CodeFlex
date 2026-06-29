@@ -12,9 +12,9 @@ export const syncUser = mutation({
     const existingUser = await ctx.db
       .query("users")
       .filter((q) => q.eq(q.field("clerkId"), args.clerkId))
-      .first();
+      .first(); // just grab the first result whatever we get from searching
 
-    if (existingUser) return;
+    if (existingUser) return;  // checking if user already exists
 
     return await ctx.db.insert("users", args);
   },

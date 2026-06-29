@@ -13,7 +13,7 @@ http.route({
   path: "/clerk-webhook",
   method: "POST",
   handler: httpAction(async (ctx, request) => {
-    const webhookSecret = process.env.CLERK_WEBHOOK_SECRET;
+    const webhookSecret = process.env.CLERK_WEBHOOK_SECRET; // environment variable in convex which was added from clerk
     if (!webhookSecret) {
       throw new Error("Missing CLERK_WEBHOOK_SECRET environment variable");
     } 
@@ -48,7 +48,7 @@ http.route({
 
     const eventType = evt.type;
 
-    if (eventType === "user.created") {
+    if (eventType === "user.created") { // this was one of the event we subscribed in clerk webhook setting
         // this event will be sent by clerk to convex to store the user to database
       const { id, first_name, last_name, image_url, email_addresses } = evt.data;
       // destructure data from informations obtained from clerk
@@ -58,7 +58,7 @@ http.route({
       const name = `${first_name || ""} ${last_name || ""}`.trim();
 
       try {
-        await ctx.runMutation(api.users.syncUser, {
+        await ctx.runMutation(api.users.syncUser, { 
           email,
           name,
           image: image_url,

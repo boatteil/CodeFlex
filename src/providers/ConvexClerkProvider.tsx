@@ -14,6 +14,6 @@ function ConvexClerkProvider({children}:{children: React.ReactNode}){
             </ConvexProviderWithClerk>
         </ClerkProvider>
     )
-}
+} 
 
 export default ConvexClerkProvider;
