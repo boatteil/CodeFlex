@@ -1,4 +1,4 @@
-import { UserResource } from "@clerk/types";
+import type { UserResource } from "@clerk/types";
 import CornerElements from "./CornerElements";
 
 const ProfileHeader = ({ user }: { user: UserResource | null | undefined }) => {
